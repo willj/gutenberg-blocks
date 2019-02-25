@@ -1,0 +1,22 @@
+{
+  "name": "48k-blocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "48kblocks.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@wordpress/babel-preset-default": "^3.0.2",
+    "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  }
+}
