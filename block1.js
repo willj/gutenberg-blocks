@@ -1,5 +1,5 @@
 const { registerBlockType } = wp.blocks;
-const { RichText, BlockControls, InspectorControls, MediaUpload, MediaUploadCheck } = wp.editor;
+const { RichText, BlockControls, InspectorControls, MediaUpload, MediaUploadCheck, InnerBlocks } = wp.editor;
 const { IconButton, SelectControl } = wp.components;
 
 registerBlockType('c48kblocks/block-1', {
@@ -74,6 +74,10 @@ registerBlockType('c48kblocks/block-1', {
                                 <button onClick={open}>Add Image</button>
                             </div>)} />
                 </MediaUploadCheck>
+                <p>Allow nested blocks, you can limit what's allowed with the allowedBlocks prop</p>
+                <div className={className + '-nested-img-wrapper'}>
+                    <InnerBlocks allowedBlocks={['core/image']} />
+                </div>
             </div>
         );
     },
@@ -87,6 +91,9 @@ registerBlockType('c48kblocks/block-1', {
                     <p>Sector: {attributes.sector}</p>
                 </div>
                 {attributes.imageUrl && <img src={attributes.imageUrl} />}
+                <div>
+                    <InnerBlocks.Content />
+                </div>
             </div>
         );
     },
